@@ -12,6 +12,9 @@ const AppsDetailsPage = async ({ params } : {params: Promise<{appsId:string}>}) 
 
     const allApps = await getAllApps()
     const app = allApps.find((app:Iapp) => app.id == Number(appsId))
+    if(!app){
+        return <div>App not found</div>
+    }
 
 
  
